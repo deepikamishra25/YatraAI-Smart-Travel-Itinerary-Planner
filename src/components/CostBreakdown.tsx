@@ -19,11 +19,11 @@ export default function CostBreakdown({ costs }: CostBreakdownProps) {
   return (
     <Card className="glass-premium overflow-hidden border-[2px] border-orange-100/50">
       <div className="bg-gradient-to-r from-orange-50 to-orange-100/50 border-b border-orange-100/80 p-5 sm:p-6">
-        <h3 className="flex justify-between items-center text-xl font-bold font-['var(--font-playfair)']">
+        <h3 className="flex justify-between items-center text-xl font-bold font-['var(--font-playfair)'] text-gray-900">
           <span>Estimated Total Trip Cost</span>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B35] to-[#FFD700] text-3xl">{formatCurrency(costs.total)}</span>
         </h3>
-        <p className="text-sm font-medium text-gray-500 mt-1">
+        <p className="text-sm font-medium text-gray-700 mt-1">
           Roughly {formatCurrency(costs.perPerson)} per person
         </p>
       </div>

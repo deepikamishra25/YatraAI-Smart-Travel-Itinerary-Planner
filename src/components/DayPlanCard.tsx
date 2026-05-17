@@ -21,7 +21,7 @@ export default function DayPlanCard({ dayPlan, defaultOpen = false }: DayPlanCar
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#FF6B35] to-[#FFB347] text-white font-bold text-lg shadow-sm border border-white/50">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#FF6B35] to-[#FFB347] text-white font-bold text-sm shadow-sm border border-white/50 whitespace-nowrap">
             Day {dayPlan.dayNumber}
           </div>
           <div>
