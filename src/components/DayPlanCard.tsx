@@ -4,7 +4,7 @@ import { useState } from "react";
 import { DayPlan } from "@/types";
 import { formatCurrency } from "@/lib/utils";
 import { Card, CardContent } from "./ui/card";
-import { ChevronDown, ChevronUp, MapPin, Clock, IndianRupee } from "lucide-react";
+import { ChevronDown, ChevronUp, MapPin, Clock, IndianRupee, Ticket } from "lucide-react";
 
 interface DayPlanCardProps {
   dayPlan: DayPlan;
@@ -15,9 +15,9 @@ export default function DayPlanCard({ dayPlan, defaultOpen = false }: DayPlanCar
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <Card className="glass-premium overflow-hidden transition-all border-2 border-orange-50 hover:border-orange-100 shadow-sm">
+    <Card className="glass-premium overflow-hidden transition-all border-2 border-orange-50 dark:border-slate-800 hover:border-orange-100 dark:hover:border-slate-700 shadow-sm hover-lift-premium">
       <div 
-        className="flex items-center justify-between p-4 sm:p-5 bg-white/40 cursor-pointer hover:bg-white/60 transition-colors"
+        className="flex items-center justify-between p-4 sm:p-5 bg-white/40 dark:bg-slate-800/40 cursor-pointer hover:bg-white/60 dark:hover:bg-slate-800/60 transition-colors"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center gap-4">
@@ -47,16 +47,28 @@ export default function DayPlanCard({ dayPlan, defaultOpen = false }: DayPlanCar
                 )}
                 <div className="flex gap-4 relative z-10">
                   <div className="flex flex-col items-center mt-1">
-                    <div className="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center border-2 border-white shadow-sm text-xs font-bold text-primary">
+                    <div className="w-6 h-6 rounded-full bg-orange-100 dark:bg-orange-500/20 flex items-center justify-center border-2 border-white dark:border-slate-900 shadow-sm text-xs font-bold text-primary">
                       {idx + 1}
                     </div>
                   </div>
                   <div className="flex-1 space-y-1.5">
                     <div className="flex justify-between items-start">
-                      <h4 className="font-bold text-gray-900">{activity.title}</h4>
-                      <span className="text-xs font-semibold text-primary bg-orange-50 px-2 py-1 rounded-full whitespace-nowrap ml-2 border border-orange-100">
-                        {activity.type}
-                      </span>
+                      <div className="flex flex-col gap-1">
+                        <h4 className="font-bold text-gray-900 dark:text-slate-50">{activity.title}</h4>
+                        <span className="w-fit text-xs font-semibold text-primary bg-orange-50 dark:bg-orange-500/10 px-2 py-0.5 rounded-full border border-orange-100 dark:border-orange-500/20">
+                          {activity.type}
+                        </span>
+                      </div>
+                      {activity.costEstimate > 0 && (
+                        <a 
+                          href={`https://www.viator.com/searchResults/all?text=${encodeURIComponent(activity.title)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-xs font-semibold text-white bg-primary hover:bg-orange-600 px-2.5 py-1 rounded-full shadow-sm transition-colors whitespace-nowrap ml-2"
+                        >
+                          <Ticket className="w-3 h-3" /> Book
+                        </a>
+                      )}
                     </div>
                     <p className="text-sm text-muted-foreground">{activity.description}</p>
                     <div className="flex flex-wrap items-center gap-4 pt-2 text-xs text-muted-foreground font-medium">

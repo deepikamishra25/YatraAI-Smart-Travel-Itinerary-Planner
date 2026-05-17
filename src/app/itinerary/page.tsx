@@ -11,7 +11,16 @@ import { calculateCosts } from "@/lib/costCalculator";
 import DestinationCard from "@/components/DestinationCard";
 import DayPlanCard from "@/components/DayPlanCard";
 import CostBreakdown from "@/components/CostBreakdown";
+import WeatherCard from "@/components/WeatherCard";
 import ExportButtons from "@/components/ExportButtons";
+import SaveTripButton from "@/components/SaveTripButton";
+import ProtectedRoute from "@/components/ProtectedRoute";
+import dynamic from "next/dynamic";
+
+const TripMap = dynamic(() => import("@/components/TripMap"), { 
+  ssr: false,
+  loading: () => <div className="h-[400px] w-full rounded-2xl bg-orange-50/50 dark:bg-slate-800/50 animate-pulse border-2 border-orange-100/50 dark:border-slate-700/50" />
+});
 
 import { Map, Sparkles, CheckCircle2, BaggageClaim } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -31,9 +40,32 @@ function ItineraryContent() {
 
   useEffect(() => {
     const loadPreferences = () => {
+      // 1. Check for saved trip ID first
+      const savedTripId = searchParams.get("savedTrip");
+      if (savedTripId) {
+        const savedData = localStorage.getItem("yatraai-saved-trips");
+        if (savedData) {
+          try {
+            const parsedTrips = JSON.parse(savedData);
+            const foundTrip = parsedTrips.find((t: any) => t.id === savedTripId);
+            if (foundTrip) {
+              setPreferences(foundTrip.preferences);
+              setSelectedDest(foundTrip.destination);
+              setItinerary(foundTrip.itinerary);
+              setCosts(foundTrip.costs);
+              setRecommendations([foundTrip.destination]);
+              setIsLoading(false);
+              return;
+            }
+          } catch (e) {
+            console.error("Failed to parse saved trips", e);
+          }
+        }
+      }
+
       let prefs: Preferences | null = null;
       
-      // Check URL query first
+      // 2. Check URL query next
       const planQuery = searchParams.get("plan");
       if (planQuery) {
         try {
@@ -43,7 +75,7 @@ function ItineraryContent() {
         }
       }
 
-      // Check localStorage if not in URL
+      // 3. Check localStorage if not in URL
       if (!prefs) {
         const localPrefs = localStorage.getItem("yatraai-prefs");
         if (localPrefs) {
@@ -62,7 +94,7 @@ function ItineraryContent() {
 
       setPreferences(prefs);
 
-      // Simulate AI Processing for 1.5 seconds
+      // Simulate AI Processing for 1.5 seconds for new trips
       setTimeout(() => {
         const recs = getRecommendations(prefs!);
         setRecommendations(recs);
@@ -88,7 +120,7 @@ function ItineraryContent() {
     return (
       <div className="min-h-[80vh] flex flex-col items-center justify-center space-y-6 text-center px-4">
         <div className="relative">
-          <div className="absolute inset-0 bg-orange-100 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute inset-0 bg-orange-100 dark:bg-orange-500/20 rounded-full blur-xl animate-pulse"></div>
           <Sparkles className="w-16 h-16 text-primary animate-bounce relative z-10" />
         </div>
         <div className="space-y-2">
@@ -110,18 +142,26 @@ function ItineraryContent() {
       {/* Header & Export */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b pb-6">
         <div>
-          <div className="inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-4 py-1.5 text-sm font-semibold text-primary mb-4 shadow-sm">
+          <div className="inline-flex items-center rounded-full border border-orange-200 dark:border-orange-500/20 bg-orange-50 dark:bg-orange-500/10 px-4 py-1.5 text-sm font-semibold text-primary mb-4 shadow-sm">
             <Sparkles className="mr-2 h-4 w-4 text-accent" />
             Your AI-Generated Travel Plan
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold font-['var(--font-playfair)'] text-gray-900 mb-2">
+          <h1 className="text-4xl md:text-5xl font-bold font-['var(--font-playfair)'] text-gray-900 dark:text-slate-50 mb-2">
             Trip to {selectedDest.name}
           </h1>
           <p className="text-lg text-muted-foreground">
             {preferences.duration} Days • {preferences.travelMates}
           </p>
         </div>
-        <ExportButtons targetId="itinerary-document" />
+        <div className="flex flex-col sm:flex-row gap-3">
+          <SaveTripButton 
+            destination={selectedDest}
+            preferences={preferences}
+            itinerary={itinerary}
+            costs={costs}
+          />
+          <ExportButtons targetId="itinerary-document" />
+        </div>
       </div>
 
       <div id="itinerary-document" className="space-y-12 bg-background px-1 py-2">
@@ -143,8 +183,8 @@ function ItineraryContent() {
           </div>
         </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column: Itinerary */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          {/* Left Column: Itinerary, Map, Packing */}
           <div className="lg:col-span-2 space-y-8">
             <section>
               <h2 className="text-2xl font-bold font-['var(--font-playfair)'] mb-6 flex items-center gap-2">
@@ -160,17 +200,39 @@ function ItineraryContent() {
                 ))}
               </div>
             </section>
+
+            <section className="pt-4">
+              <TripMap destination={selectedDest} />
+            </section>
+
+            <section className="pt-4">
+              <Card className="glass-premium border-[2px] border-orange-100/50 dark:border-slate-800">
+                <CardHeader className="bg-muted/50 border-b p-5">
+                  <CardTitle className="flex items-center gap-2 text-lg">
+                    <BaggageClaim className="w-5 h-5 text-primary" />
+                    Packing Suggestions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-5 flex flex-wrap gap-2">
+                  {selectedDest.packingHints.map((hint, idx) => (
+                    <span key={idx} className="bg-orange-50 dark:bg-orange-500/10 text-orange-700 dark:text-orange-400 px-3 py-1.5 rounded-full text-xs font-semibold border border-orange-100/60 dark:border-orange-500/20 shadow-sm">
+                      {hint}
+                    </span>
+                  ))}
+                </CardContent>
+              </Card>
+            </section>
           </div>
 
-          {/* Right Column: Costs, Packing, Reasons */}
-          <div className="space-y-8">
+          {/* Right Column: Costs, Reasons, Weather */}
+          <div className="space-y-8 sticky top-24">
             <section>
               <h2 className="text-2xl font-bold font-['var(--font-playfair)'] mb-6">Trip Budget</h2>
               <CostBreakdown costs={costs} />
             </section>
 
             <section>
-              <Card className="glass-premium border-[2px] border-orange-100/50">
+              <Card className="glass-premium border-[2px] border-orange-100/50 dark:border-slate-800">
                 <CardHeader className="bg-muted/50 border-b p-5">
                   <CardTitle className="flex items-center gap-2 text-lg">
                     <CheckCircle2 className="w-5 h-5 text-primary" />
@@ -191,21 +253,7 @@ function ItineraryContent() {
             </section>
 
             <section>
-              <Card className="glass-premium border-[2px] border-orange-100/50">
-                <CardHeader className="bg-muted/50 border-b p-5">
-                  <CardTitle className="flex items-center gap-2 text-lg">
-                    <BaggageClaim className="w-5 h-5 text-primary" />
-                    Packing Suggestions
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-5 flex flex-wrap gap-2">
-                  {selectedDest.packingHints.map((hint, idx) => (
-                    <span key={idx} className="bg-orange-50 text-orange-700 px-3 py-1.5 rounded-full text-xs font-semibold border border-orange-100/60 shadow-sm">
-                      {hint}
-                    </span>
-                  ))}
-                </CardContent>
-              </Card>
+              <WeatherCard destination={selectedDest} />
             </section>
           </div>
         </div>
@@ -216,8 +264,10 @@ function ItineraryContent() {
 
 export default function ItineraryPage() {
   return (
-    <Suspense fallback={<div className="min-h-[80vh] flex items-center justify-center"><div className="animate-pulse bg-primary/20 w-16 h-16 rounded-full"></div></div>}>
-      <ItineraryContent />
-    </Suspense>
+    <ProtectedRoute>
+      <Suspense fallback={<div className="min-h-[80vh] flex items-center justify-center"><div className="animate-pulse bg-primary/20 w-16 h-16 rounded-full"></div></div>}>
+        <ItineraryContent />
+      </Suspense>
+    </ProtectedRoute>
   );
 }

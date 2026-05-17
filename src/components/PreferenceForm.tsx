@@ -85,7 +85,7 @@ export default function PreferenceForm() {
           <span>Step {step} of {totalSteps}</span>
           <span>{Math.round(progress)}% Completed</span>
         </div>
-        <div className="w-full bg-orange-100 rounded-full h-2.5 shadow-inner">
+        <div className="w-full bg-orange-100 dark:bg-slate-800 rounded-full h-2.5 shadow-inner">
           <div 
             className="bg-gradient-to-r from-[#FF6B35] to-[#FFB347] h-2.5 rounded-full transition-all duration-500 ease-in-out shadow-[0_0_10px_rgba(255,107,53,0.5)]" 
             style={{ width: `${progress}%` }}
@@ -126,10 +126,10 @@ export default function PreferenceForm() {
                 <button
                   key={region}
                   onClick={() => setPrefs({ ...prefs, region })}
-                  className={`p-4 border-[3px] rounded-2xl text-center transition-all shadow-sm ${
+                  className={`p-4 border-[3px] rounded-2xl text-center transition-all shadow-sm hover-lift-premium ${
                     prefs.region === region 
-                      ? "border-primary bg-orange-50 font-bold text-primary ring-4 ring-orange-100/50 scale-[1.02]" 
-                      : "border-transparent bg-white/60 hover:border-orange-200 hover:bg-white font-medium text-gray-600 hover:text-gray-900 hover:-translate-y-1 hover:shadow-md"
+                      ? "border-primary bg-orange-50 dark:bg-orange-500/20 font-bold text-primary ring-4 ring-orange-100/50 dark:ring-orange-900/50 scale-[1.02]" 
+                      : "border-transparent bg-white/60 dark:bg-slate-800/60 hover:border-orange-200 dark:hover:border-slate-600 hover:bg-white dark:hover:bg-slate-800 font-medium text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-slate-100"
                   }`}
                 >
                   {region}
@@ -178,10 +178,10 @@ export default function PreferenceForm() {
                     <button
                       key={interest}
                       onClick={() => toggleInterest(interest)}
-                      className={`px-4 py-2.5 border-[2px] rounded-full text-sm transition-all flex items-center gap-2 font-medium shadow-sm ${
+                      className={`px-4 py-2.5 border-[2px] rounded-full text-sm transition-all flex items-center gap-2 font-medium shadow-sm hover-lift-premium ${
                         isSelected 
-                          ? "border-primary bg-orange-50 text-primary shadow-md scale-105" 
-                          : "border-transparent bg-white/60 hover:border-orange-200 hover:bg-white text-gray-600 hover:text-gray-900"
+                          ? "border-primary bg-orange-50 dark:bg-orange-500/20 text-primary shadow-md scale-105" 
+                          : "border-transparent bg-white/60 dark:bg-slate-800/60 hover:border-orange-200 dark:hover:border-slate-600 hover:bg-white dark:hover:bg-slate-800 text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-slate-100"
                       }`}
                     >
                       {isSelected && <CheckCircle2 className="w-4 h-4" />}
@@ -201,10 +201,10 @@ export default function PreferenceForm() {
                 <button
                   key={mate}
                   onClick={() => setPrefs({ ...prefs, travelMates: mate })}
-                  className={`p-6 border-[3px] rounded-2xl text-center transition-all shadow-sm ${
+                  className={`p-6 border-[3px] rounded-2xl text-center transition-all shadow-sm hover-lift-premium ${
                     prefs.travelMates === mate 
-                      ? "border-primary bg-orange-50 font-bold text-primary ring-4 ring-orange-100/50 scale-[1.05] shadow-md" 
-                      : "border-transparent bg-white/60 hover:border-orange-200 hover:bg-white font-medium text-gray-600 hover:text-gray-900 hover:-translate-y-1 hover:shadow-md"
+                      ? "border-primary bg-orange-50 dark:bg-orange-500/20 font-bold text-primary ring-4 ring-orange-100/50 dark:ring-orange-900/50 scale-[1.05] shadow-md" 
+                      : "border-transparent bg-white/60 dark:bg-slate-800/60 hover:border-orange-200 dark:hover:border-slate-600 hover:bg-white dark:hover:bg-slate-800 font-medium text-gray-600 dark:text-slate-400 hover:text-gray-900 dark:hover:text-slate-100"
                   }`}
                 >
                   {mate}

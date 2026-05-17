@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles, MapPin, Star } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden rounded-3xl mt-4 bg-orange-50/40 backdrop-blur-xl shadow-sm border border-orange-200 px-6 py-12 md:py-20 lg:px-12 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(255,107,53,0.1)] hover:border-orange-300">
+    <section className="relative w-full min-h-[80vh] flex items-center justify-center overflow-hidden rounded-3xl mt-4 bg-orange-50/40 dark:bg-slate-900/40 backdrop-blur-xl shadow-sm border border-orange-200 dark:border-slate-800 px-6 py-12 md:py-20 lg:px-12 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(255,107,53,0.1)] dark:hover:shadow-[0_30px_60px_rgba(255,107,53,0.05)] hover:border-orange-300 dark:hover:border-slate-700">
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Left Content */}
         <div className="flex-1 flex flex-col items-start text-left space-y-6">
@@ -12,11 +12,11 @@ export default function HeroSection() {
             <Sparkles className="mr-2 h-4 w-4 text-accent" />
             AI-Powered Travel Planning
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 font-['var(--font-playfair)'] leading-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 dark:text-slate-50 font-['var(--font-playfair)'] leading-tight">
             Discover India, <br className="hidden sm:block" /> 
             <span className="text-primary">Curated for You</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-xl">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-slate-400 max-w-xl">
             Experience the vibrant culture, breathtaking landscapes, and hidden gems of India with an intelligent itinerary designed exactly to your preferences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
@@ -44,8 +44,8 @@ export default function HeroSection() {
           </div>
 
           {/* Floating Metric 1 */}
-          <div className="absolute top-10 -left-4 sm:-left-10 lg:-left-16 glass-premium bg-white/90 p-4 rounded-2xl flex items-center gap-4 hover-lift-premium cursor-default">
-            <div className="bg-orange-100 p-3 rounded-full text-primary">
+          <div className="absolute top-10 -left-4 sm:-left-10 lg:-left-16 glass-premium bg-white/90 dark:bg-slate-900/90 p-4 rounded-2xl flex items-center gap-4 hover-lift-premium cursor-default">
+            <div className="bg-orange-100 dark:bg-orange-500/20 p-3 rounded-full text-primary">
               <MapPin className="w-6 h-6" />
             </div>
             <div>
@@ -55,8 +55,8 @@ export default function HeroSection() {
           </div>
 
           {/* Floating Metric 2 */}
-          <div className="absolute bottom-20 -right-4 sm:-right-8 lg:-right-12 glass-premium bg-white/90 p-4 rounded-2xl flex items-center gap-4 hover-lift-premium cursor-default">
-            <div className="bg-green-100 p-3 rounded-full text-secondary">
+          <div className="absolute bottom-20 -right-4 sm:-right-8 lg:-right-12 glass-premium bg-white/90 dark:bg-slate-900/90 p-4 rounded-2xl flex items-center gap-4 hover-lift-premium cursor-default">
+            <div className="bg-green-100 dark:bg-emerald-500/20 p-3 rounded-full text-secondary dark:text-emerald-400">
               <Star className="w-6 h-6" />
             </div>
             <div>
@@ -66,7 +66,7 @@ export default function HeroSection() {
           </div>
           
           {/* Floating Metric 3 */}
-          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 glass-premium bg-white/90 px-6 py-3 rounded-full flex items-center gap-3 w-max hover-lift-premium cursor-default">
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 glass-premium bg-white/90 dark:bg-slate-900/90 px-6 py-3 rounded-full flex items-center gap-3 w-max hover-lift-premium cursor-default">
             <div className="flex -space-x-3">
               <div className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-xs font-bold text-gray-500 z-30">A</div>
               <div className="w-8 h-8 rounded-full bg-orange-200 border-2 border-white flex items-center justify-center text-xs font-bold text-orange-700 z-20">M</div>

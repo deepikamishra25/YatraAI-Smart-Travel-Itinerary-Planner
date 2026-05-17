@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackgroundDecorations from "@/components/BackgroundDecorations";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,16 +43,9 @@ export default function RootLayout({
         />
       </head>
       <body 
-        className={`${inter.variable} ${playfair.variable} font-sans antialiased min-h-screen flex flex-col text-foreground transition-colors duration-300 ease-in-out relative overflow-x-hidden`}
-        style={{
-          backgroundColor: 'white',
-          backgroundImage: `
-            linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: '40px 40px'
-        }}
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased min-h-screen flex flex-col text-gray-900 dark:text-slate-100 bg-white dark:bg-slate-950 transition-colors duration-300 ease-in-out relative overflow-x-hidden`}
       >
+        <BackgroundDecorations />
         <Navbar />
         <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 z-0">
           {children}

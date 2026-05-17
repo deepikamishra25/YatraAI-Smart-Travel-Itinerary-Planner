@@ -4,179 +4,657 @@
     "name": "Jaipur",
     "state": "Rajasthan",
     "region": "North",
-    "interests": ["History", "Architecture", "Culture", "Shopping", "Photography"],
+    "interests": [
+      "History",
+      "Architecture",
+      "Culture",
+      "Shopping",
+      "Photography"
+    ],
     "minBudget": 5000,
     "avgDailyCost": 3500,
-    "bestDuration": { "min": 2, "max": 4 },
-    "attractions": ["Amer Fort", "Hawa Mahal", "City Palace", "Jantar Mantar"],
+    "bestDuration": {
+      "min": 2,
+      "max": 4
+    },
+    "attractions": [
+      {
+        "name": "Amer Fort"
+      },
+      {
+        "name": "Hawa Mahal"
+      },
+      {
+        "name": "City Palace"
+      },
+      {
+        "name": "Jantar Mantar"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=2070&auto=format&fit=crop",
     "rating": 4.7,
-    "bestMonths": ["October", "November", "December", "January", "February", "March"],
-    "packingHints": ["Comfortable walking shoes", "Cotton clothes", "Sunscreen", "Camera"]
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "packingHints": [
+      "Comfortable walking shoes",
+      "Cotton clothes",
+      "Sunscreen",
+      "Camera"
+    ],
+    "latitude": 26.9124,
+    "longitude": 75.7873,
+    "weatherInfo": {
+      "tempRange": "15°C - 35°C",
+      "icon": "sun"
+    }
   },
   {
     "id": "dest-udaipur",
     "name": "Udaipur",
     "state": "Rajasthan",
     "region": "North",
-    "interests": ["Romance", "History", "Nature", "Luxury", "Photography"],
+    "interests": [
+      "Romance",
+      "History",
+      "Nature",
+      "Luxury",
+      "Photography"
+    ],
     "minBudget": 6000,
     "avgDailyCost": 4000,
-    "bestDuration": { "min": 2, "max": 4 },
-    "attractions": ["City Palace", "Lake Pichola", "Jag Mandir", "Sajjangarh Monsoon Palace"],
+    "bestDuration": {
+      "min": 2,
+      "max": 4
+    },
+    "attractions": [
+      {
+        "name": "City Palace"
+      },
+      {
+        "name": "Lake Pichola"
+      },
+      {
+        "name": "Jag Mandir"
+      },
+      {
+        "name": "Sajjangarh Monsoon Palace"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=2070&auto=format&fit=crop",
     "rating": 4.8,
-    "bestMonths": ["September", "October", "November", "December", "January", "February", "March"],
-    "packingHints": ["Light layers", "Comfortable shoes", "Sunglasses", "Evening wear"]
+    "bestMonths": [
+      "September",
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "packingHints": [
+      "Light layers",
+      "Comfortable shoes",
+      "Sunglasses",
+      "Evening wear"
+    ],
+    "latitude": 24.5854,
+    "longitude": 73.7125,
+    "weatherInfo": {
+      "tempRange": "18°C - 32°C",
+      "icon": "sun"
+    }
   },
   {
     "id": "dest-goa",
     "name": "Goa",
     "state": "Goa",
     "region": "West",
-    "interests": ["Beaches", "Nightlife", "Water Sports", "Relaxation", "Food"],
+    "interests": [
+      "Beaches",
+      "Nightlife",
+      "Water Sports",
+      "Relaxation",
+      "Food"
+    ],
     "minBudget": 8000,
     "avgDailyCost": 4500,
-    "bestDuration": { "min": 3, "max": 7 },
-    "attractions": ["Baga Beach", "Basilica of Bom Jesus", "Dudhsagar Falls", "Fort Aguada"],
+    "bestDuration": {
+      "min": 3,
+      "max": 7
+    },
+    "attractions": [
+      {
+        "name": "Baga Beach"
+      },
+      {
+        "name": "Basilica of Bom Jesus"
+      },
+      {
+        "name": "Dudhsagar Falls"
+      },
+      {
+        "name": "Fort Aguada"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1974&auto=format&fit=crop",
     "rating": 4.6,
-    "bestMonths": ["November", "December", "January", "February"],
-    "packingHints": ["Swimwear", "Flip flops", "Sunscreen", "Light cotton clothes"]
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
+    "packingHints": [
+      "Swimwear",
+      "Flip flops",
+      "Sunscreen",
+      "Light cotton clothes"
+    ],
+    "latitude": 15.2993,
+    "longitude": 74.124,
+    "weatherInfo": {
+      "tempRange": "22°C - 33°C",
+      "icon": "sun"
+    }
   },
   {
     "id": "dest-kerala-backwaters",
     "name": "Kerala Backwaters",
     "state": "Kerala",
     "region": "South",
-    "interests": ["Nature", "Relaxation", "Photography", "Wellness", "Romance"],
+    "interests": [
+      "Nature",
+      "Relaxation",
+      "Photography",
+      "Wellness",
+      "Romance"
+    ],
     "minBudget": 10000,
     "avgDailyCost": 5500,
-    "bestDuration": { "min": 2, "max": 5 },
-    "attractions": ["Alleppey Houseboats", "Kumarakom Bird Sanctuary", "Marari Beach", "Vembanad Lake"],
+    "bestDuration": {
+      "min": 2,
+      "max": 5
+    },
+    "attractions": [
+      {
+        "name": "Alleppey Houseboats"
+      },
+      {
+        "name": "Kumarakom Bird Sanctuary"
+      },
+      {
+        "name": "Marari Beach"
+      },
+      {
+        "name": "Vembanad Lake"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2069&auto=format&fit=crop",
     "rating": 4.9,
-    "bestMonths": ["September", "October", "November", "December", "January", "February", "March"],
-    "packingHints": ["Mosquito repellent", "Umbrella", "Light cottons", "Camera"]
+    "bestMonths": [
+      "September",
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "packingHints": [
+      "Mosquito repellent",
+      "Umbrella",
+      "Light cottons",
+      "Camera"
+    ],
+    "latitude": 9.4981,
+    "longitude": 76.3388,
+    "weatherInfo": {
+      "tempRange": "24°C - 32°C",
+      "icon": "cloud"
+    }
   },
   {
     "id": "dest-rishikesh",
     "name": "Rishikesh",
     "state": "Uttarakhand",
     "region": "North",
-    "interests": ["Adventure", "Spirituality", "Nature", "Wellness", "Yoga"],
+    "interests": [
+      "Adventure",
+      "Spirituality",
+      "Nature",
+      "Wellness",
+      "Yoga"
+    ],
     "minBudget": 3000,
     "avgDailyCost": 2000,
-    "bestDuration": { "min": 2, "max": 5 },
-    "attractions": ["Laxman Jhula", "Triveni Ghat", "Beatles Ashram", "Neer Garh Waterfall"],
+    "bestDuration": {
+      "min": 2,
+      "max": 5
+    },
+    "attractions": [
+      {
+        "name": "Laxman Jhula"
+      },
+      {
+        "name": "Triveni Ghat"
+      },
+      {
+        "name": "Beatles Ashram"
+      },
+      {
+        "name": "Neer Garh Waterfall"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?q=80&w=2069&auto=format&fit=crop",
     "rating": 4.5,
-    "bestMonths": ["February", "March", "April", "May", "September", "October", "November"],
-    "packingHints": ["Trekking shoes", "Modest clothing", "Warm jacket for evenings", "Water bottle"]
+    "bestMonths": [
+      "February",
+      "March",
+      "April",
+      "May",
+      "September",
+      "October",
+      "November"
+    ],
+    "packingHints": [
+      "Trekking shoes",
+      "Modest clothing",
+      "Warm jacket for evenings",
+      "Water bottle"
+    ],
+    "latitude": 30.0869,
+    "longitude": 78.2676,
+    "weatherInfo": {
+      "tempRange": "10°C - 28°C",
+      "icon": "sun"
+    }
   },
   {
     "id": "dest-varanasi",
     "name": "Varanasi",
     "state": "Uttar Pradesh",
     "region": "North",
-    "interests": ["Spirituality", "Culture", "History", "Photography", "Food"],
+    "interests": [
+      "Spirituality",
+      "Culture",
+      "History",
+      "Photography",
+      "Food"
+    ],
     "minBudget": 4000,
     "avgDailyCost": 2500,
-    "bestDuration": { "min": 2, "max": 3 },
-    "attractions": ["Kashi Vishwanath Temple", "Dashashwamedh Ghat", "Sarnath", "Assi Ghat"],
+    "bestDuration": {
+      "min": 2,
+      "max": 3
+    },
+    "attractions": [
+      {
+        "name": "Kashi Vishwanath Temple"
+      },
+      {
+        "name": "Dashashwamedh Ghat"
+      },
+      {
+        "name": "Sarnath"
+      },
+      {
+        "name": "Assi Ghat"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=2076&auto=format&fit=crop",
     "rating": 4.6,
-    "bestMonths": ["October", "November", "December", "January", "February", "March"],
-    "packingHints": ["Conservative clothing", "Walking shoes", "Scarf", "Hand sanitizer"]
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "packingHints": [
+      "Conservative clothing",
+      "Walking shoes",
+      "Scarf",
+      "Hand sanitizer"
+    ],
+    "latitude": 25.3176,
+    "longitude": 82.9739,
+    "weatherInfo": {
+      "tempRange": "15°C - 30°C",
+      "icon": "sun"
+    }
   },
   {
     "id": "dest-leh-ladakh",
     "name": "Leh-Ladakh",
     "state": "Ladakh",
     "region": "North",
-    "interests": ["Adventure", "Nature", "Road Trips", "Photography", "Buddhism"],
+    "interests": [
+      "Adventure",
+      "Nature",
+      "Road Trips",
+      "Photography",
+      "Buddhism"
+    ],
     "minBudget": 15000,
     "avgDailyCost": 4000,
-    "bestDuration": { "min": 5, "max": 10 },
-    "attractions": ["Pangong Lake", "Nubra Valley", "Thiksey Monastery", "Magnetic Hill"],
+    "bestDuration": {
+      "min": 5,
+      "max": 10
+    },
+    "attractions": [
+      {
+        "name": "Pangong Lake"
+      },
+      {
+        "name": "Nubra Valley"
+      },
+      {
+        "name": "Thiksey Monastery"
+      },
+      {
+        "name": "Magnetic Hill"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1532375810709-75b1da00537c?q=80&w=2070&auto=format&fit=crop",
     "rating": 4.9,
-    "bestMonths": ["May", "June", "July", "August", "September"],
-    "packingHints": ["Heavy woolens", "Sunscreen", "Altitude sickness medication", "Good trekking shoes"]
+    "bestMonths": [
+      "May",
+      "June",
+      "July",
+      "August",
+      "September"
+    ],
+    "packingHints": [
+      "Heavy woolens",
+      "Sunscreen",
+      "Altitude sickness medication",
+      "Good trekking shoes"
+    ],
+    "latitude": 34.1526,
+    "longitude": 77.5771,
+    "weatherInfo": {
+      "tempRange": "-5°C - 25°C",
+      "icon": "snow"
+    }
   },
   {
     "id": "dest-darjeeling",
     "name": "Darjeeling",
     "state": "West Bengal",
     "region": "East",
-    "interests": ["Nature", "Tea Gardens", "Mountains", "Romance", "Photography"],
+    "interests": [
+      "Nature",
+      "Tea Gardens",
+      "Mountains",
+      "Romance",
+      "Photography"
+    ],
     "minBudget": 5000,
     "avgDailyCost": 3000,
-    "bestDuration": { "min": 3, "max": 5 },
-    "attractions": ["Tiger Hill", "Batasia Loop", "Peace Pagoda", "Darjeeling Himalayan Railway"],
+    "bestDuration": {
+      "min": 3,
+      "max": 5
+    },
+    "attractions": [
+      {
+        "name": "Tiger Hill"
+      },
+      {
+        "name": "Batasia Loop"
+      },
+      {
+        "name": "Peace Pagoda"
+      },
+      {
+        "name": "Darjeeling Himalayan Railway"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?q=80&w=2070&auto=format&fit=crop",
     "rating": 4.5,
-    "bestMonths": ["March", "April", "May", "October", "November"],
-    "packingHints": ["Warm layers", "Raincoat or umbrella", "Walking shoes", "Camera"]
+    "bestMonths": [
+      "March",
+      "April",
+      "May",
+      "October",
+      "November"
+    ],
+    "packingHints": [
+      "Warm layers",
+      "Raincoat or umbrella",
+      "Walking shoes",
+      "Camera"
+    ],
+    "latitude": 27.036,
+    "longitude": 88.2627,
+    "weatherInfo": {
+      "tempRange": "8°C - 20°C",
+      "icon": "cloud"
+    }
   },
   {
     "id": "dest-hampi",
     "name": "Hampi",
     "state": "Karnataka",
     "region": "South",
-    "interests": ["History", "Architecture", "Photography", "Backpacking", "Bouldering"],
+    "interests": [
+      "History",
+      "Architecture",
+      "Photography",
+      "Backpacking",
+      "Bouldering"
+    ],
     "minBudget": 4000,
     "avgDailyCost": 2000,
-    "bestDuration": { "min": 2, "max": 4 },
-    "attractions": ["Virupaksha Temple", "Vittala Temple", "Matanga Hill", "Hemakuta Hill Temples"],
+    "bestDuration": {
+      "min": 2,
+      "max": 4
+    },
+    "attractions": [
+      {
+        "name": "Virupaksha Temple"
+      },
+      {
+        "name": "Vittala Temple"
+      },
+      {
+        "name": "Matanga Hill"
+      },
+      {
+        "name": "Hemakuta Hill Temples"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1524230507669-5ff97982bb5e?q=80&w=2070&auto=format&fit=crop",
     "rating": 4.7,
-    "bestMonths": ["October", "November", "December", "January", "February"],
-    "packingHints": ["Light cotton clothing", "Sturdy walking shoes", "Sun hat", "Sunscreen"]
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February"
+    ],
+    "packingHints": [
+      "Light cotton clothing",
+      "Sturdy walking shoes",
+      "Sun hat",
+      "Sunscreen"
+    ],
+    "latitude": 15.335,
+    "longitude": 76.46,
+    "weatherInfo": {
+      "tempRange": "20°C - 34°C",
+      "icon": "sun"
+    }
   },
   {
     "id": "dest-andaman-islands",
     "name": "Andaman Islands",
     "state": "Andaman and Nicobar Islands",
     "region": "South",
-    "interests": ["Beaches", "Water Sports", "Nature", "Relaxation", "Scuba Diving"],
+    "interests": [
+      "Beaches",
+      "Water Sports",
+      "Nature",
+      "Relaxation",
+      "Scuba Diving"
+    ],
     "minBudget": 20000,
     "avgDailyCost": 6000,
-    "bestDuration": { "min": 5, "max": 8 },
-    "attractions": ["Radhanagar Beach", "Cellular Jail", "Ross Island", "Elephant Beach"],
+    "bestDuration": {
+      "min": 5,
+      "max": 8
+    },
+    "attractions": [
+      {
+        "name": "Radhanagar Beach"
+      },
+      {
+        "name": "Cellular Jail"
+      },
+      {
+        "name": "Ross Island"
+      },
+      {
+        "name": "Elephant Beach"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=2070&auto=format&fit=crop",
     "rating": 4.8,
-    "bestMonths": ["October", "November", "December", "January", "February", "March", "April"],
-    "packingHints": ["Swimwear", "Reef-safe sunscreen", "Light tropical clothes", "Waterproof bag"]
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "packingHints": [
+      "Swimwear",
+      "Reef-safe sunscreen",
+      "Light tropical clothes",
+      "Waterproof bag"
+    ],
+    "latitude": 11.6234,
+    "longitude": 92.7265,
+    "weatherInfo": {
+      "tempRange": "24°C - 32°C",
+      "icon": "sun"
+    }
   },
   {
     "id": "dest-kaziranga",
     "name": "Kaziranga",
     "state": "Assam",
     "region": "North East",
-    "interests": ["Wildlife", "Nature", "Photography", "Adventure"],
+    "interests": [
+      "Wildlife",
+      "Nature",
+      "Photography",
+      "Adventure"
+    ],
     "minBudget": 7000,
     "avgDailyCost": 4000,
-    "bestDuration": { "min": 2, "max": 3 },
-    "attractions": ["Kaziranga National Park Safari", "Orchid and Biodiversity Park", "Tea Gardens", "Brahmaputra River"],
+    "bestDuration": {
+      "min": 2,
+      "max": 3
+    },
+    "attractions": [
+      {
+        "name": "Kaziranga National Park Safari"
+      },
+      {
+        "name": "Orchid and Biodiversity Park"
+      },
+      {
+        "name": "Tea Gardens"
+      },
+      {
+        "name": "Brahmaputra River"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2070&auto=format&fit=crop",
     "rating": 4.6,
-    "bestMonths": ["November", "December", "January", "February", "March", "April"],
-    "packingHints": ["Earth-toned clothing", "Binoculars", "Telephoto lens", "Mosquito repellent"]
+    "bestMonths": [
+      "November",
+      "December",
+      "January",
+      "February",
+      "March",
+      "April"
+    ],
+    "packingHints": [
+      "Earth-toned clothing",
+      "Binoculars",
+      "Telephoto lens",
+      "Mosquito repellent"
+    ],
+    "latitude": 26.5775,
+    "longitude": 93.1711,
+    "weatherInfo": {
+      "tempRange": "18°C - 30°C",
+      "icon": "cloud"
+    }
   },
   {
     "id": "dest-mysore",
     "name": "Mysore",
     "state": "Karnataka",
     "region": "South",
-    "interests": ["History", "Architecture", "Culture", "Yoga", "Silk Shopping"],
+    "interests": [
+      "History",
+      "Architecture",
+      "Culture",
+      "Yoga",
+      "Silk Shopping"
+    ],
     "minBudget": 4000,
     "avgDailyCost": 2500,
-    "bestDuration": { "min": 1, "max": 3 },
-    "attractions": ["Mysore Palace", "Chamundi Hill", "Brindavan Gardens", "St. Philomena's Cathedral"],
+    "bestDuration": {
+      "min": 1,
+      "max": 3
+    },
+    "attractions": [
+      {
+        "name": "Mysore Palace"
+      },
+      {
+        "name": "Chamundi Hill"
+      },
+      {
+        "name": "Brindavan Gardens"
+      },
+      {
+        "name": "St. Philomena's Cathedral"
+      }
+    ],
     "image": "https://images.unsplash.com/photo-1477587458883-47145ed94245?q=80&w=2070&auto=format&fit=crop",
     "rating": 4.5,
-    "bestMonths": ["October", "November", "December", "January", "February", "March"],
-    "packingHints": ["Comfortable walking shoes", "Smart casuals", "Camera", "Space for shopping"]
+    "bestMonths": [
+      "October",
+      "November",
+      "December",
+      "January",
+      "February",
+      "March"
+    ],
+    "packingHints": [
+      "Comfortable walking shoes",
+      "Smart casuals",
+      "Camera",
+      "Space for shopping"
+    ],
+    "latitude": 12.2958,
+    "longitude": 76.6394,
+    "weatherInfo": {
+      "tempRange": "15°C - 30°C",
+      "icon": "sun"
+    }
   }
 ]

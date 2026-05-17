@@ -1,3 +1,20 @@
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  password?: string;
+  createdAt: string;
+}
+
+export interface LoginCredentials {
+  email: string;
+  password?: string;
+}
+
+export interface SignupCredentials extends LoginCredentials {
+  name: string;
+}
+
 export interface Preferences {
   budget: number;
   duration: number;
@@ -34,6 +51,12 @@ export interface CostBreakdown {
   perPerson: number;
 }
 
+export interface Attraction {
+  name: string;
+  latitude?: number;
+  longitude?: number;
+}
+
 export interface Destination {
   id: string;
   name: string;
@@ -46,11 +69,17 @@ export interface Destination {
     min: number;
     max: number;
   };
-  attractions: string[];
+  latitude: number;
+  longitude: number;
+  attractions: Attraction[];
   image: string;
   rating: number;
   bestMonths: string[];
   packingHints: string[];
+  weatherInfo?: {
+    tempRange: string;
+    icon: string;
+  };
 }
 
 export interface ScoredDestination extends Destination {

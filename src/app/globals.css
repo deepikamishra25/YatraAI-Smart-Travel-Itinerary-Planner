@@ -110,7 +110,11 @@
   }
 
   .glass-premium {
-    @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-orange-100 dark:border-orange-900/30 shadow-[0_20px_60px_rgba(255,107,53,0.08)] rounded-3xl transition-all duration-300;
+    @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-orange-100 dark:border-slate-800 shadow-[0_20px_60px_rgba(255,107,53,0.08)] dark:shadow-none rounded-3xl transition-all duration-300;
+  }
+  
+  .glass-box {
+    @apply bg-white/30 border border-orange-200/40 rounded-2xl backdrop-blur-md opacity-20 dark:bg-slate-800/30 dark:border-slate-700/40;
   }
   
   .hover-lift-premium {
@@ -132,6 +136,10 @@
 
   .bg-hero-gradient {
     background: linear-gradient(135deg, #FFF7ED 0%, #FFFBF5 35%, #F0FDF4 70%, #ECFEFF 100%);
+  }
+  
+  .dark .bg-hero-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #0f172a 70%, #020617 100%);
   }
 
   .bg-btn-gradient {

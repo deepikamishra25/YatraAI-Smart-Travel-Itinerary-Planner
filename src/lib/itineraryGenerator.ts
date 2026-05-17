@@ -23,11 +23,11 @@ export function generateItinerary(destination: Destination, prefs: Preferences):
         const attraction = attractions.shift()!;
         activities.push({
           id: `day-${i}-sightseeing`,
-          title: `Evening at ${attraction}`,
-          description: `Enjoy a relaxed evening visit to ${attraction}.`,
+          title: `Evening at ${attraction.name}`,
+          description: `Enjoy a relaxed evening visit to ${attraction.name}.`,
           durationHours: 3,
           costEstimate: 500,
-          location: attraction,
+          location: attraction.name,
           type: "Sightseeing"
         });
       }
@@ -57,11 +57,11 @@ export function generateItinerary(destination: Destination, prefs: Preferences):
         const attraction = attractions.shift()!;
         activities.push({
           id: `day-${i}-morning`,
-          title: `Morning at ${attraction}`,
-          description: `Start your day by exploring ${attraction}.`,
+          title: `Morning at ${attraction.name}`,
+          description: `Start your day by exploring ${attraction.name}.`,
           durationHours: 4,
           costEstimate: 800,
-          location: attraction,
+          location: attraction.name,
           type: "Sightseeing"
         });
       }
@@ -69,11 +69,11 @@ export function generateItinerary(destination: Destination, prefs: Preferences):
         const attraction = attractions.shift()!;
         activities.push({
           id: `day-${i}-afternoon`,
-          title: `Afternoon at ${attraction}`,
-          description: `Continue your adventure at ${attraction}.`,
+          title: `Afternoon at ${attraction.name}`,
+          description: `Continue your adventure at ${attraction.name}.`,
           durationHours: 3,
           costEstimate: 800,
-          location: attraction,
+          location: attraction.name,
           type: "Sightseeing"
         });
       }
