@@ -25,7 +25,8 @@ export default function SaveTripButton({
     try {
       const user = getCurrentUser();
       if (!user) {
-        alert("You must be logged in to save a trip.");
+        alert("You must be logged in to save a trip. Redirecting to login...");
+        window.location.href = "/login";
         return;
       }
 

@@ -25,6 +25,12 @@ export function isAuthenticated(): boolean {
   return getCurrentUser() !== null;
 }
 
+export function dispatchAuthChange(): void {
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new Event("auth-change"));
+  }
+}
+
 export function signup(credentials: SignupCredentials): { success: boolean; error?: string; user?: User } {
   const users = getUsers();
   
@@ -46,6 +52,7 @@ export function signup(credentials: SignupCredentials): { success: boolean; erro
   // Auto login
   if (typeof window !== "undefined") {
     localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(newUser));
+    dispatchAuthChange();
   }
 
   return { success: true, user: newUser };
@@ -61,6 +68,7 @@ export function login(credentials: LoginCredentials): { success: boolean; error?
 
   if (typeof window !== "undefined") {
     localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user));
+    dispatchAuthChange();
   }
 
   return { success: true, user };
@@ -69,5 +77,6 @@ export function login(credentials: LoginCredentials): { success: boolean; error?
 export function logout(): void {
   if (typeof window !== "undefined") {
     localStorage.removeItem(CURRENT_USER_KEY);
+    dispatchAuthChange();
   }
 }
