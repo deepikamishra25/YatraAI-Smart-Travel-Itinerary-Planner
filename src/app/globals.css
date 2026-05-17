@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-inter);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(221, 39%, 11%);
+
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(221, 39%, 11%);
+
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(221, 39%, 11%);
+
+  --primary: hsl(16, 100%, 60%);
+  --primary-foreground: hsl(0, 0%, 100%);
+
+  --secondary: hsl(153, 40%, 30%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+
+  --muted: hsl(36, 100%, 98%);
+  --muted-foreground: hsl(215, 16%, 47%);
+
+  --accent: hsl(51, 100%, 50%);
+  --accent-foreground: hsl(221, 39%, 11%);
+
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+
+  --border: hsl(16, 100%, 95%);
+  --input: hsl(16, 100%, 95%);
+  --ring: hsl(16, 100%, 60%);
+
+  --radius: 1.5rem;
+}
+
+.dark {
+  --background: hsl(221, 39%, 11%);
+  --foreground: hsl(0, 0%, 100%);
+
+  --card: hsl(221, 39%, 13%);
+  --card-foreground: hsl(0, 0%, 100%);
+
+  --popover: hsl(221, 39%, 11%);
+  --popover-foreground: hsl(0, 0%, 100%);
+
+  --primary: hsl(16, 100%, 65%);
+  --primary-foreground: hsl(221, 39%, 11%);
+
+  --secondary: hsl(153, 40%, 40%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+
+  --muted: hsl(221, 39%, 15%);
+  --muted-foreground: hsl(215, 16%, 65%);
+
+  --accent: hsl(51, 100%, 55%);
+  --accent-foreground: hsl(221, 39%, 11%);
+
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+
+  --border: hsl(221, 39%, 20%);
+  --input: hsl(221, 39%, 20%);
+  --ring: hsl(16, 100%, 65%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300 ease-in-out;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-black/50 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-xl;
+  }
+
+  .glass-premium {
+    @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-orange-100 dark:border-orange-900/30 shadow-[0_20px_60px_rgba(255,107,53,0.08)] rounded-3xl transition-all duration-300;
+  }
+  
+  .hover-lift-premium {
+    @apply transition-all duration-300 ease-out transform-gpu hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_25px_80px_rgba(255,107,53,0.15)];
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-12px) rotate(3deg);
+    }
+  }
+
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFFBF5 35%, #F0FDF4 70%, #ECFEFF 100%);
+  }
+
+  .bg-btn-gradient {
+    background: linear-gradient(90deg, #FF6B35 0%, #FFB347 100%);
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Custom scrollbar to keep it clean */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: white !important;
+      color: black !important;
+    }
+    * {
+      border-color: #e5e7eb !important;
+    }
+  }
+}
